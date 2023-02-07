@@ -103,7 +103,8 @@ jobs:
     needs: get-release-version
     name: Publish docs to `${{ needs.get-release-version.outputs.RELEASE_VERSION }}` directory of `gh-pages` branch
     permissions:
-      contents: write
+      pages: write
+      id-token: write
     uses: ./.github/workflows/publish-docs.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
@@ -112,7 +113,8 @@ jobs:
     needs: publish-npm
     name: Publish docs to `latest` directory of `gh-pages` branch
     permissions:
-      contents: write
+      pages: write
+      id-token: write
     uses: ./.github/workflows/publish-docs.yml
     with:
       destination_dir: latest
