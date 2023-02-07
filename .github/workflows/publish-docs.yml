@@ -53,6 +53,3 @@ jobs:
     steps:
       - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
         uses: actions/deploy-pages@v1
-
-
-
